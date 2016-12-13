@@ -4,6 +4,7 @@ $( document ).ready(function() {
     randomCardAssign();
 
 
+//This shit is not working quite yet
 
 
 
@@ -13,28 +14,11 @@ $( document ).ready(function() {
       for(var i = 0; i < 12; i++){
         // var newCard = randomInt(0, 11);
         var currentCard = assignCard();
-        console.log(currentCard);
-        // cardArray.push(currentCard);
 
-        if(i < 1){
-          pushCard(currentCard);
-        } else{
-          checkCardNumbers(currentCard);
-        }
+        cardArray.push(currentCard);
 
-        // for(var card = 0; card < 12; card ++){
-        //
-        //
-        //   if(currentCard === cardArray[card]){
-        //     currentCard = assignCard();
-        //   } else {
-        //     cardArray.push(currentCard);
-        //   }
-        // }
-
-        // console.log(newCard);
       }
-
+      checkForDuplicates();
       console.log(cardArray);
 
     }
@@ -69,6 +53,15 @@ $( document ).ready(function() {
       min = Math.ceil(min);
       max = Math.floor(max);
       return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    function checkForDuplicates() {
+      // console.log("checking");
+      for(var i = 0; i < cardArray.length; i++){
+        var selectedPosition = cardArray[i];
+
+
+      }
     }
 
   });
