@@ -3,6 +3,17 @@ $( document ).ready(function() {
     var cardArray = [];
     randomCardAssign();
 
+    var newCardArray = [1, 2, 3, 4, 5, 6];
+
+    var cardOne = 1;
+    var cardTwo = 2;
+    var cardThree = 3;
+    var cardFour = 4;
+    var cardFive = 5;
+    var cardSix = 6;
+
+
+
 
 //This shit is not working quite yet
 
