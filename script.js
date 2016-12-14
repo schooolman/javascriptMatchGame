@@ -59,8 +59,11 @@ $( document ).ready(function() {
       // console.log("checking");
       for(var i = 0; i < cardArray.length; i++){
         var selectedPosition = cardArray[i];
-
-
+        var testing = cardArray.indexOf(selectedPosition, "this is the selected position");
+        // console.log(testing);
+        // if(testing === -1){
+        //   console.log("found match");
+        // }
       }
     }
 
