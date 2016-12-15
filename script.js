@@ -13,7 +13,12 @@ $( document ).ready(function() {
 
     randomCardAssign();
 
+    // Using a switch is working as far as assigning and building a random
+    // card number array, but it is blowing the stack when the options get
+    // too small. Only works up to four cards.
 
+    // Need to remove the possiblility of a a loop that runs too long. Maybe
+    // selecting from an array and removing them from the choices when there are 2 of them?
 
     function randomCardAssign(){
 
@@ -23,32 +28,75 @@ $( document ).ready(function() {
         var temp = assignCard();
 
         switch (temp) {
-          case temp === 0:
+          case 0:
             if(cardOne < 2){
               cardArray.push(temp);
+              cardOne++;
+              console.log("hopefully Pushhed", cardOne);
             } else {
+              console.log("no go");
               i--;
             }
             break;
 
-          case temp === 1:
+          case 1:
             if(cardTwo < 2){
               cardArray.push(temp);
+              cardTwo++;
+              console.log("hopefully Pushhed", cardTwo);
             } else {
+              console.log("no go");
               i--;
             }
             break;
 
-          case temp === 2:
+          case 2:
             if(cardThree < 2){
               cardArray.push(temp);
+              cardThree++;
+              console.log("hopefully Pushhed", cardThree);
             } else {
+              console.log("no go");
+              i--;
+            }
+            break;
+
+          case 3:
+            if(cardFour < 2){
+              cardArray.push(temp);
+              cardFour++;
+              console.log("hopefully Pushhed", cardFour);
+            } else {
+              console.log("no go");
+              i--;
+            }
+            break;
+
+          case 4:
+            if(cardFive < 2){
+              cardArray.push(temp);
+              // cardFive++;
+              console.log("hopefully Pushhed", cardFive);
+            } else {
+              console.log("no go");
+              i--;
+            }
+            break;
+
+          case 5:
+            if(cardSix < 2){
+              cardArray.push(temp);
+              // cardSix++;
+              console.log("hopefully Pushhed");
+            } else {
+              console.log("no go");
               i--;
             }
             break;
 
           default:
-            console.log("hitting default switch");
+            console.log("hitting default switch", temp);
+            break;
 
         }
 
@@ -86,7 +134,7 @@ $( document ).ready(function() {
     }
 
     function assignCard(){
-      var newCard = randomInt(0, 11);
+      var newCard = randomInt(0, 5);
       return newCard;
     }
 
