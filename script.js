@@ -1,22 +1,17 @@
 $( document ).ready(function() {
     // console.log("hello WORLD");
     var cardArray = [];
-    randomCardAssign();
 
     var newCardArray = [1, 2, 3, 4, 5, 6];
 
-    var cardOne = 1;
-    var cardTwo = 2;
-    var cardThree = 3;
-    var cardFour = 4;
-    var cardFive = 5;
-    var cardSix = 6;
+    var cardOne = 0;
+    var cardTwo = 0;
+    var cardThree = 0;
+    var cardFour = 0;
+    var cardFive = 0;
+    var cardSix = 0;
 
-
-
-
-//This shit is not working quite yet
-
+    randomCardAssign();
 
 
 
@@ -24,15 +19,50 @@ $( document ).ready(function() {
 
       for(var i = 0; i < 12; i++){
         // var newCard = randomInt(0, 11);
-        var currentCard = assignCard();
+        // var currentCard = assignCard();
+        var temp = assignCard();
 
-        cardArray.push(currentCard);
+        switch (temp) {
+          case temp === 0:
+            if(cardOne < 2){
+              cardArray.push(temp);
+            } else {
+              i--;
+            }
+            break;
+
+          case temp === 1:
+            if(cardTwo < 2){
+              cardArray.push(temp);
+            } else {
+              i--;
+            }
+            break;
+
+          case temp === 2:
+            if(cardThree < 2){
+              cardArray.push(temp);
+            } else {
+              i--;
+            }
+            break;
+
+          default:
+            console.log("hitting default switch");
+
+        }
+
+        // cardArray.push(currentCard);
 
       }
       checkForDuplicates();
       console.log(cardArray);
 
     }
+
+
+    //Functions
+
 
     function checkCardNumbers(current){
       for(var i = 0; i < cardArray.length; i++){
