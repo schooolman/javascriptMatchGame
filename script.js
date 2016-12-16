@@ -13,6 +13,8 @@ $( document ).ready(function() {
       $scope.cardTwo = 0;
       $scope.tempSelect = 0;
 
+      $scope.isActive = false;
+
       //This variable is for the initial build of how many card paris for the game
       var newCardArray = [];
 
@@ -34,19 +36,26 @@ $( document ).ready(function() {
 
       $scope.matchCards = function($index){
 
-
         if($scope.tempSelect === 0){
           $scope.cardOne = $scope.cardArray[$index];
           $scope.tempSelect++;
+          // $scope.isActive = !$scope.isActive;
+          $scope.targetReveal($index);
+
           console.log("first card selected", $scope.cardOne);
 
         } else {
           $scope.cardTwo = $scope.cardArray[$index];
           compareSelection();
           $scope.tempSelect--;
+          // $scope.isActive = !$scope.isActive;
           console.log("second Card selected", $scope.cardTwo);
         }
-        // console.log($scope.cardArray[$index]);
+      };
+
+      $scope.targetReveal = function($index) {
+          console.log($index);
+          $scope.cardArray[$index].isActive = !$scope.cardArray[$index].isActive;
       };
 
       function compareSelection(){
