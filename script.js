@@ -1,8 +1,11 @@
 $( document ).ready(function() {
-    // console.log("hello WORLD");
+
     var cardArray = [];
 
-    var newCardArray = [1, 2, 3, 4, 5, 6];
+    var newCardArray = [];
+
+    var numberOfCards = 12;
+    var numberOfPairs = numberOfCards/2;
 
     var cardOne = 0;
     var cardTwo = 0;
@@ -11,8 +14,22 @@ $( document ).ready(function() {
     var cardFive = 0;
     var cardSix = 0;
 
-    randomCardAssign();
+    // randomCardAssign();
+    buildArray(numberOfPairs);
+    assignCards();
 
+    function assignCards(){
+      var randomNumMax = newCardArray.length;
+      console.log(randomNumMax);
+    }
+
+    function buildArray(arrayLength){
+      for(var i = 0; i < arrayLength; i++){
+        newCardArray.push(i);
+        newCardArray.push(i);
+      }
+      console.log(newCardArray);
+    }
     // Using a switch is working as far as assigning and building a random
     // card number array, but it is blowing the stack when the options get
     // too small. Only works up to four cards.
