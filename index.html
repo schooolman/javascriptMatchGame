@@ -6,24 +6,23 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     <script type="text/javascript" src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
   </head>
   <body>
 
-<main>
-  <div class="card-layout">
-    <div class="card one"></div>
-    <div class="card two"></div>
-    <div class="card three"></div>
-    <div class="card four"></div>
-    <div class="card five"></div>
-    <div class="card six"></div>
-    <div class="card seven"></div>
-    <div class="card eight"></div>
-    <div class="card nine"></div>
-    <div class="card ten"></div>
-    <div class="card eleven"></div>
-    <div class="card twelve"></div>
+<main ng-app="myApp">
+  <div class="controller" ng-controller="myApp as app">
+
+    <!-- <h1>{{title}}</h1> -->
+
+    <div class="card-layout">
+      <div class="card" ng-repeat="card in cardArray track by $index">
+        <h1>{{card}}</h1>
+      </div>
+    </div>
+
   </div>
+
 </main>
 
 
