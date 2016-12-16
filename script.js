@@ -9,6 +9,10 @@ $( document ).ready(function() {
       //This is the array of random card values built out.
       $scope.cardArray = [];
 
+      $scope.cardOne = 0;
+      $scope.cardTwo = 0;
+      $scope.tempSelect = 0;
+
       //This variable is for the initial build of how many card paris for the game
       var newCardArray = [];
 
@@ -27,6 +31,31 @@ $( document ).ready(function() {
 
 
       //functions
+
+      $scope.matchCards = function($index){
+
+
+        if($scope.tempSelect === 0){
+          $scope.cardOne = $scope.cardArray[$index];
+          $scope.tempSelect++;
+          console.log("first card selected", $scope.cardOne);
+
+        } else {
+          $scope.cardTwo = $scope.cardArray[$index];
+          compareSelection();
+          $scope.tempSelect--;
+          console.log("second Card selected", $scope.cardTwo);
+        }
+        // console.log($scope.cardArray[$index]);
+      };
+
+      function compareSelection(){
+          if($scope.cardOne === $scope.cardTwo){
+            console.log("they match!");
+          } else {
+            console.log("try again");
+          }
+      }
 
       function buildArray(arrayLength){
         for(var i = 0; i < arrayLength; i++){
