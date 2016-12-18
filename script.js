@@ -48,6 +48,9 @@ $( document ).ready(function() {
           $scope.cardTwo = $scope.cardArray[$index];
           compareSelection();
           $scope.tempSelect--;
+          var cardShowTwo = $('.card')[$index];
+          console.log(cardShowTwo);
+          // cardShowTwo.addClass('active');
           // $scope.isActive = !$scope.isActive;
           console.log("second Card selected", $scope.cardTwo);
         }
