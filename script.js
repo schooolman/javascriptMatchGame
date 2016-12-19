@@ -4,8 +4,6 @@ $( document ).ready(function() {
 
     app.controller('myApp', function($scope){
 
-        // $scope.title = "Testing controller";
-
       //This is the array of random card values built out.
       $scope.cardArray = [];
 
@@ -20,13 +18,6 @@ $( document ).ready(function() {
 
       var numberOfCards = 12; //This variable will be adjusted by front-end user eventually
       var numberOfPairs = numberOfCards/2;
-
-      // var cardOne = 0;
-      // var cardTwo = 0;
-      // var cardThree = 0;
-      // var cardFour = 0;
-      // var cardFive = 0;
-      // var cardSix = 0;
 
       buildArray(numberOfPairs);
       assignCards();
