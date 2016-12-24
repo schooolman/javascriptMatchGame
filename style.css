@@ -20,12 +20,13 @@
 }
 
 .card-value {
-  opacity: 0;
+  /*opacity: 0;*/
   transition: opacity 200ms linear;
 }
 
 .active {
   opacity: 1;
+  background: red;
 }
 
 .card h1 {

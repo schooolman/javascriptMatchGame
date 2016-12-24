@@ -15,9 +15,9 @@
 
     <div class="card-layout">
       <div class="card" ng-repeat="card in cardArray track by $index" ng-click="matchCards($index)">
-        <!-- <h1 class="card-value" ng-class="{'active': isActive}">{{card}}</h1> -->
+        <h1 class="card-value" ng-class="{'active': isActive}">{{card}}</h1>
         <!-- ng-class="{'selected': $index==selectedIndex}" -->
-        <h1 class="card-value" ng-class="{'selected': $index==selectedIndex}">{{card}}</h1>
+        <!-- <h1 class="card-value" ng-class="{'selected': $index==selectedIndex}">{{card}}</h1> -->
       </div>
     </div>
 

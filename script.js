@@ -42,13 +42,15 @@ $( document ).ready(function() {
           console.log(cardShowTwo);
           // cardShowTwo.addClass('active');
           // $scope.isActive = !$scope.isActive;
+          $scope.targetReveal($index);
           console.log("second Card selected", $scope.cardTwo);
         }
       };
 
       $scope.targetReveal = function($index) {
-          console.log($index);
-          $scope.cardArray[$index].isActive = !$scope.cardArray[$index].isActive;
+          // $scope.isActive = !$scope.isActive;
+          $(this).addClass('active');
+          console.log("class boolean", $scope.isActive);
       };
 
       function compareSelection(){
