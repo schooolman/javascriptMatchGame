@@ -22,7 +22,6 @@ $( document ).ready(function() {
       buildArray(numberOfPairs);
       assignCards();
 
-
       //functions
 
       $scope.matchCards = function($index){

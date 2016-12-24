@@ -32,3 +32,8 @@
   display: block;
   margin: 0 auto;
 }
+
+.selected {
+  color: red;
+  display: block;
+}
